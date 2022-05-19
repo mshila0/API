@@ -1,1 +1,3 @@
 # API
+
+https://hearthstoneapi.com/
