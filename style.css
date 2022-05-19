@@ -26,6 +26,12 @@ input, button
     border: 0;
     background-color: transparent;
 }
+#line {
+    background-color: #3B5998;
+    padding: 20px 40px;
+    color: white;
+    text-align: center;
+}
 
 #cover
 {
