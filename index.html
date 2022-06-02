@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Book of recipes</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script defer src="kod.js"></script>
-    <title>Поиск еды :\</title>
 </head>
 <body>
-<h1>Поиск еды :\</h1>
+<h1>Search for dishes by ingredients</h1>
 <div id="line">
-<div id="cover">
-    <form id="form" method="get" action="">
-        <div class="tb">
-            <div class="td"><input type="text" placeholder="Search" required></div>
-            <div class="td" id="s-cover">
-                <button type="submit">
-                    <div id="s-circle"></div>
-                    <span></span>
-                </button>
+    <div id="cover">
+        <form id="form" method="get" action="">
+            <div class="tb">
+                <div class="td"><input id="input" type="text" placeholder="Search" required></div>
+                <div class="td" id="s-cover">
+                    <button id="search" type="submit">
+                        <div id="s-circle"></div>
+                        <span></span>
+                    </button>
+                </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 </div>
 
-<ul id="list">
-    <li>Съесть пончик</li>
+<img id = "spinner" src ="giphy.gif" style="display: block; margin: 0 auto"/>
+<ul id = list>
 </ul>
+
 </body>
 </html>
-
