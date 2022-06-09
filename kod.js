@@ -23,12 +23,11 @@ function render(){
     let result = "";
 
     for (let item of data.hits){
-        let url = item.recipe.image
         result += `<li>
+            <br/><b>${item.recipe.label}</b><br/>
+            <img src="${item.recipe.image}" ></br>
             <br/><i> ${item.recipe.ingredientLines.join('<br>')}</i></br>
             </li>`;
-        list.innerHTML += '<br/><b>${item.recipe.label}</b><br/>'
-        list.innerHTML += '<br/><img src="' + url + '"/></br>'
-        list.innerHTML += result
     }
+    list.innerHTML = result
 }
