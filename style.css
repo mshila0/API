@@ -5,6 +5,15 @@ h1 {
     text-align: center;
 }
 
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+
+#spin {
+    display: flex;
+    justify-content: center;
+}
+
 .tb
 {
     display: table;
