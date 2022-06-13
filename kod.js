@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         searchButton.disabled = true;
         e.preventDefault();
         const input = document.getElementById("input");
-        const response = await fetch(`https://api.edamam.com/search?app_id=900da95e&app_key=40698503668e0bb3897581f4766d77f9&q=${input.value}&from=0&to=30`);
+        const response = await fetch(`https://api.edamam.com/search?app_id=900da95e&app_key=40698503668e0bb3897581f4766d77f9&q=${input.value}&from=0&to=50`);
         data = await response.json();
         spinner.style.display = "none";
         searchButton.disabled = false;
@@ -51,9 +51,10 @@ function render(){
                 result += `<li>
                 <h2>${item.recipe.label}</h2>
                 <a href="${item.recipe.url}">Recipe</a>
+                <p>${parseInt(item.recipe.calories)} calories</p>
+                
                 <p/><img src="${item.recipe.image}"></p>
                 <p/><i> ${item.recipe.ingredientLines.join('<br>')}</i></p>
-                <p/>${item.recipe.calories}</p>
                 </li>`;
             }
         }
