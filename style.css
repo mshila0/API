@@ -9,6 +9,11 @@ img {
     margin-top: 20px;
 }
 
+#radio, #radio1, #radio2 {
+    transform:scale(1.5);
+    cursor:pointer;
+}
+
 img:hover {
     transform: scale(1.1);
 }

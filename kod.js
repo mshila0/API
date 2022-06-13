@@ -24,10 +24,12 @@ function render(){
     let result = "";
     let now_cal = 0;
     let max_cal = calories.value == 0 ? 5000 : calories.value
+    let rad = document.getElementsByName('r1');
     let dt_index = document.getElementById('mySelect').selectedIndex;
     let dt_options = document.getElementById('mySelect').options;
     let ct_index = document.getElementById('SecondSelect').selectedIndex;
     let ct_options = document.getElementById('SecondSelect').options;
+    let temparr = []
     for (let item of data.hits){
         now_cal = item.recipe.calories
         if (Number(now_cal) <= max_cal && (dt_options[dt_index].value === 'none' ||
@@ -35,15 +37,26 @@ function render(){
             (ct_options[ct_index].value === 'none' ||
             item.recipe.cuisineType.includes(ct_options[ct_index].value))) {
 
-            result += `<li>
-            <h2>${item.recipe.label}</h2>
-            <a href="${item.recipe.url}">Recipe</a>
-            <p/><img src="${item.recipe.image}"></p>
-            <p/><i> ${item.recipe.ingredientLines.join('<br>')}</i></p>
-            <p/>${item.recipe.calories}</p>
-            </li>`;
+            temparr.push(item.recipe.label)
+        }
+    }
+    if (rad[0].checked)
+        temparr.sort();
+    else if (rad[1].checked)
+        temparr.reverse()
+
+    for (let element of temparr) {
+        for (let item of data.hits) {
+            if (element === item.recipe.label) {
+                result += `<li>
+                <h2>${item.recipe.label}</h2>
+                <a href="${item.recipe.url}">Recipe</a>
+                <p/><img src="${item.recipe.image}"></p>
+                <p/><i> ${item.recipe.ingredientLines.join('<br>')}</i></p>
+                <p/>${item.recipe.calories}</p>
+                </li>`;
+            }
         }
     }
     list.innerHTML = result
-    sortListDir();
 }
