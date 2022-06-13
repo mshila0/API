@@ -4,6 +4,13 @@ h1 {
     font-weight: bold;
     text-align: center;
 }
+select {
+    margin-left: 10px;
+    font-family: Nunito;
+    font-size: 20px;
+    padding: 10px;
+    background-color: transparent;
+}
 
 #filter {
     background-color: #ffe6e6;
