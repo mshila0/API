@@ -36,12 +36,14 @@ function render(){
             item.recipe.cuisineType.includes(ct_options[ct_index].value))) {
 
             result += `<li>
-            <br/><h2>${item.recipe.label}</h2><br/>
-            <img src="${item.recipe.image}" ></br>
-            <br/><i> ${item.recipe.ingredientLines.join('<br>')}</i></br>
-            <br/>${item.recipe.calories}</br>
+            <h2>${item.recipe.label}</h2>
+            <a href="${item.recipe.url}">Recipe</a>
+            <p/><img src="${item.recipe.image}"></p>
+            <p/><i> ${item.recipe.ingredientLines.join('<br>')}</i></p>
+            <p/>${item.recipe.calories}</p>
             </li>`;
         }
     }
     list.innerHTML = result
+    sortListDir();
 }
